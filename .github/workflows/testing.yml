@@ -34,6 +34,12 @@ jobs:
       - name: Django Testing
         run: |
           python3 manage.py test
+      - name: Push Develop Branch into Main
+        uses: KrutiAmrutiya/action-branch-to-branch@main
+        with:
+          dest_branch: main
+          source_branch: develop
+          commit_message: "Release production version"
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
