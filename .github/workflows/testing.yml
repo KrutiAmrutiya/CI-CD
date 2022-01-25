@@ -35,7 +35,7 @@ jobs:
         run: |
           python3 manage.py test
       - name: Push Develop Branch into Main
-        uses: actions/checkout@main
+        uses: KrutiAmrutiya/CI-CD@main
         with:
           label_name: 'merged in main'
           target_branch: 'main'
