@@ -34,10 +34,19 @@ jobs:
       - name: Django Testing
         run: |
           python3 manage.py test
-  deploy:
+  job1:
     runs-on: ubuntu-latest
-    needs: [ build ]
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-      - uses: actions/checkout@v2
-      - name: Print nice message on success finish
-        run: echo "CD part finished successfuly"
+      - id: step1
+        run: echo "::set-output name=test::hello"
+      - id: step2
+        run: echo "::set-output name=test::world"
+  job2:
+      runs-on: ubuntu-latest
+      needs: job1
+      steps:
+        - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
