@@ -37,8 +37,8 @@ jobs:
       - name: Push Develop Branch into Main
         uses: KrutiAmrutiya/CI-CD@main
         with:
-          dest_branch: main
-          source_branch: develop
+          label_name: 'merged in main'
+          target_branch: 'main'
           commit_message: "Release production version"
   job1:
     runs-on: ubuntu-latest
