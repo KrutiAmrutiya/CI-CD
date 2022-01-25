@@ -35,7 +35,7 @@ jobs:
         run: |
           python3 manage.py test
       - name: Push Develop Branch into Main
-        uses: KrutiAmrutiya/action-branch-to-branch@main
+        uses: KrutiAmrutiya/action-branch-to-branch@develop
         with:
           dest_branch: main
           source_branch: develop
