@@ -40,9 +40,9 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Merge by labeled
-        uses: devmasx/merge-branch@master
+        uses: KrutiAmrutiya/CI-CD@master
         with:
-          label_name: 'merged in develop'
+          label_name: 'merged in main'
           target_branch: 'develop'
   job1:
     runs-on: ubuntu-latest
