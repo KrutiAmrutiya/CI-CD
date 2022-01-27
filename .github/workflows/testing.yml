@@ -35,7 +35,7 @@ jobs:
         run: |
           python3 manage.py test
       - name: Merge by labeled
-          uses: KrutiAmrutiya/CI-CD@main
+          uses: KrutiAmrutiya/CI-CD@develop
           with:
             label_name: 'merged in main'
             target_branch: 'develop'
