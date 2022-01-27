@@ -84,9 +84,9 @@ jobs:
             git config --global user.name "KrutiAmrutiya"
             git status
             git pull
-            git checkout "abc"
+            git checkout "$DEFAULT_BRANCH"
             git status
-            git checkout "main"
-            git merge "abc" --no-edit
+            git checkout "$GITHUB_HEAD_REF"
+            git merge "$DEFAULT_BRANCH" --no-edit
             git push
             git status
