@@ -50,3 +50,13 @@ jobs:
       needs: job1
       steps:
         - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge by labeled
+        uses: devmasx/merge-branch@master
+        with:
+          label_name: 'merged in develop'
+          target_branch: 'develop'
