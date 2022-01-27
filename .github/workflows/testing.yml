@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Merge by labeled
-        uses: KrutiAmrutiya/CI-CD@master
+        uses: KrutiAmrutiya/CI-CD@main
         with:
           label_name: 'merged in main'
           target_branch: 'develop'
