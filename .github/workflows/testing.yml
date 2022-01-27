@@ -90,3 +90,8 @@ jobs:
             git merge "$DEFAULT_BRANCH" --no-edit
             git push
             git status
+        - name: remove label
+            if: always()
+            uses: actions-ecosystem/action-remove-labels@v1
+            with:
+              labels: merge main
