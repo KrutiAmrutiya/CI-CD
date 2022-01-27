@@ -34,16 +34,6 @@ jobs:
       - name: Django Testing
         run: |
           python3 manage.py test
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-
-      - name: Merge by labeled
-        uses: KrutiAmrutiya/CI-CD@main
-        with:
-          label_name: 'merged in main'
-          target_branch: 'develop'
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
