@@ -34,12 +34,6 @@ jobs:
       - name: Django Testing
         run: |
           python3 manage.py test
-      - name: Push Develop Branch into Main
-        uses: actions/checkout@main
-        with:
-          label_name: 'merged in main'
-          target_branch: 'develop'
-          commit_message: "Release production version"
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
