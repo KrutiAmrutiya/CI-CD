@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           label_name: 'merged in main'
-          target_branch: 'develop'
+          target_branch: main
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
