@@ -68,7 +68,7 @@ jobs:
       steps:
         - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
   main:
-      if: ${{ github.event.label.name == 'merge main' }}
+      if: ${{ github.event.label.name == 'main' }}
       name: Merge Main
       runs-on: ubuntu-latest
       steps:
@@ -84,9 +84,9 @@ jobs:
             git config --global user.name "KrutiAmrutiya"
             git status
             git pull
-            git checkout "$DEFAULT_BRANCH"
+            git checkout "main"
             git status
-            git checkout "$GITHUB_HEAD_REF"
-            git merge "$DEFAULT_BRANCH" --no-edit
+            git checkout "abc"
+            git merge "main" --no-edit
             git push
             git status
