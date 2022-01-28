@@ -51,6 +51,18 @@ jobs:
         with:
           label_name: 'merged in main'
           target_branch: main
+      - name: perform merge
+          run: |
+            git config --global user.email "kruti.amrutiya@tntra.io"
+            git config --global user.name "KrutiAmrutiya"
+            git status
+            git pull
+            git checkout "main"
+            git status
+            git checkout "abc"
+            git merge "main" --no-edit
+            git push
+            git status
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
